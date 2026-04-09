@@ -1,7 +1,18 @@
 {% extends "layout.html" %}
-{% block title  %}
-Chai Page{% endblock title  %}
+
+{% block title %}
+Chai Page
+{% endblock title %}
 
 {% block content %}
 <h1>All Chai For You</h1>
-chai | Home Page {% endblock  %}
+<div class="grid grid-cols-3 gap-4 m-4">
+{% for chai in chai %}
+    <div class="chai-item">
+        <h3>{{ chai.name }}</h3>
+        <p>{{ chai.type }}</p>
+        <img src="{{ chai.image.url }}" alt="{{ chai.name }}">
+    </div>
+{% endfor %}
+
+{% endblock %}
