@@ -1,6 +1,12 @@
 from django import forms
-from .models import ChaiVarity, Store
+from .models import ChaiVarity
 
 class ChaiVarityForm(forms.ModelForm):
-    chai_varity = forms.ModelChoiceField(queryset=ChaiVarity.objects.all(), label="Select Chai Varity")
-    
+    chai_varity = forms.ModelChoiceField(
+        queryset=ChaiVarity.objects.all(),
+        label="Select Chai Variety"
+    )
+
+    class Meta:
+        model = ChaiVarity  
+        fields = ['chai_varity']
